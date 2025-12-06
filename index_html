@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>관계 온도계 - 개선 버전</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <h1>관계 온도계</h1>
+      <p>AI 규칙 기반 분석으로 나와 타인의 관계 온도를 한눈에 확인해보세요.</p>
+    </header>
+
+    <main class="main">
+      <section class="card card-input">
+        <h2>관계 상황 입력</h2>
+        <p class="hint">
+          최근 대화 내용, 연락 빈도, 서로의 반응 등을 자유롭게 적어주세요.
+        </p>
+        <textarea
+          id="inputText"
+          placeholder="예: 요즘 연락이 좀 줄었고, 만나면 예전보다는 말수가 적어진 느낌이에요. 그래도 제가 힘들다고 하면 바로 전화해주긴 해요."
+        ></textarea>
+        <button id="analyzeBtn">AI 분석하기</button>
+      </section>
+
+      <section class="card card-result">
+        <h2>분석 결과</h2>
+
+        <div id="emptyState" class="empty-state">
+          <p>왼쪽에 관계 상황을 입력하고<br />분석하기 버튼을 눌러주세요.</p>
+        </div>
+
+        <div id="result" class="result hidden">
+          <div class="top-row">
+            <div class="thermo-wrapper">
+              <div class="thermo">
+                <div class="thermo-inner">
+                  <div class="thermo-fill" id="thermoFill"></div>
+                </div>
+                <div class="thermo-bulb"></div>
+              </div>
+              <div class="thermo-temp">
+                <span id="tempValue">0</span>°
+              </div>
+              <p class="thermo-label" id="tempLabel">관계 상태 대기 중</p>
+            </div>
+
+            <div class="summary">
+              <h3>관계 한 줄 요약</h3>
+              <p id="summaryText"></p>
+            </div>
+          </div>
+
+          <div class="detail">
+            <h3>관계 설명</h3>
+            <p id="reasonText"></p>
+          </div>
+
+          <div class="detail">
+            <h3>관계 개선 팁</h3>
+            <p id="adviceText"></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>버전 2.0 · 기본 버전에서 UI와 시각화를 개선한 형태입니다.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
